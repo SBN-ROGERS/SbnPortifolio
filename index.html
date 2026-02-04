@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSEBWANA ROGERS  SBN</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#3b82f6',secondary:'#10b981'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+scroll-behavior: smooth;
+}
+.heading-font {
+font-family: 'Poppins', sans-serif;
+}
+.skill-bar {
+height: 8px;
+border-radius: 4px;
+background-color: #e5e7eb;
+overflow: hidden;
+}
+.skill-progress {
+height: 100%;
+border-radius: 4px;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+.custom-checkbox {
+position: relative;
+display: flex;
+align-items: center;
+cursor: pointer;
+}
+.custom-checkbox input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+}
+.checkmark {
+height: 20px;
+width: 20px;
+background-color: #fff;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #3b82f6;
+border-color: #3b82f6;
+}
+.checkmark:after {
+content: "";
+display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.toggle-switch {
+position: relative;
+display: inline-block;
+width: 48px;
+height: 24px;
+}
+.toggle-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #e5e7eb;
+transition: .4s;
+border-radius: 24px;
+}
+.slider:before {
+position: absolute;
+content: "";
+height: 18px;
+width: 18px;
+left: 3px;
+bottom: 3px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+input:checked + .slider {
+background-color: #3b82f6;
+}
+input:checked + .slider:before {
+transform: translateX(24px);
+}
+.project-card {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.filter-btn.active {
+background-color: #3b82f6;
+color: white;
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Header -->
+<header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+<div class="container mx-auto px-4 py-4 flex justify-between items-center">
+<a href="#" class="text-2xl font-['Pacifico'] text-primary">SIR SSEBWANA ROGERS</a>
+<div class="hidden md:flex items-center space-x-8">
+<a href="#home" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+<a href="#about" class="text-gray-700 hover:text-primary transition-colors">About</a>
+<a href="#projects" class="text-gray-700 hover:text-primary transition-colors">Projects</a>
+<a href="#skills" class="text-gray-700 hover:text-primary transition-colors">Skills</a>
+<a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+<label class="toggle-switch">
+<input type="checkbox" id="themeToggle">
+<span class="slider"></span>
+</label>
+</div>
+<button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg absolute top-full left-0 right-0">
+<div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+<a href="#home" class="text-gray-700 hover:text-primary transition-colors py-2">Home</a>
+<a href="#about" class="text-gray-700 hover:text-primary transition-colors py-2">About</a>
+<a href="#projects" class="text-gray-700 hover:text-primary transition-colors py-2">Projects</a>
+<a href="#skills" class="text-gray-700 hover:text-primary transition-colors py-2">Skills</a>
+<a href="#contact" class="text-gray-700 hover:text-primary transition-colors py-2">Contact</a>
+<div class="flex items-center">
+<span class="mr-2 text-sm text-gray-500">Dark Mode</span>
+<label class="toggle-switch">
+<input type="checkbox" id="mobileThemeToggle">
+<span class="slider"></span>
+</label>
+</div>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section id="home" class="w-full min-h-screen pt-20 relative" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20abstract%20background%20with%20blue%20and%20teal%20gradient%2C%20subtle%20geometric%20patterns%2C%20professional%20portfolio%20background%2C%20clean%20minimal%20design%2C%20soft%20lighting%2C%20perfect%20for%20portfolio%20website%20hero%20section%2C%20high%20quality%2C%20detailed%2C%208k%20resolution&width=1920&height=1080&seq=hero1&orientation=landscape'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
+<div class="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center justify-between relative z-10">
+<div class="w-full md:w-1/2 mb-10 md:mb-0">
+<h1 class="text-4xl md:text-6xl font-bold heading-font mb-4 text-gray-900">SSEBWANA ROGERS</h1>
+<h2 class="text-xl md:text-2xl font-medium text-primary mb-6">Senior I.T Officer and Software Developer</h2>
+<p class="text-gray-700 text-lg mb-8 max-w-lg">I am a professional I.T personnel that focuses on Technical support, Network management, System administration, Cybersecurity and Data management. I craft beautiful, functional, and user-friendly digital experiences with a focus on performance and accessibility. With 3+ years of experience, I bring ideas to life through clean code and thoughtful design.</p>
+<div class="flex flex-wrap gap-4">
+<a href="#projects" class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">View My Work</a>
+<a href="#contact" class="border-2 border-primary text-primary px-6 py-3 !rounded-button font-medium hover:bg-primary/5 transition-colors whitespace-nowrap">Get In Touch</a>
+</div>
+</div>
+<div class="w-full md:w-1/2 flex justify-center md:justify-end">
+<div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
+<img src="IMG-20250212-WA0012-removebg-preview.jpg" alt="Sir SSEBWANA ROGERS" class="w-full h-full object-cover object-top">
+</div>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+<a href="#about" class="w-10 h-10 flex items-center justify-center text-primary">
+<i class="ri-arrow-down-line ri-xl"></i>
+</a>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl md:text-4xl font-bold heading-font text-center mb-16 text-gray-900">About Me</h2>
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="w-full md:w-2/5">
+<img src="IMG-20250212-WA0005.jpg" alt="SIR SSEBWANA ROGERS" class="w-full h-auto rounded-lg shadow-lg">
+</div>
+<div class="w-full md:w-3/5">
+<h3 class="text-2xl font-semibold heading-font mb-4 text-gray-900">My Journey</h3>
+<p class="text-gray-700 mb-6">I'm a passionate I.T Personel, developer based in Masaka with over 3 years of professional experience. I specialize in creating responsive, accessible, and performant web and mobile applications that deliver exceptional user experiences.</p>
+<p class="text-gray-700 mb-6">My approach combines technical expertise with a keen eye for design, allowing me to bridge the gap between functionality and aesthetics. I believe that great digital products should not only work flawlessly but also delight users through thoughtful interactions and visual appeal.</p>
+<div class="mb-8">
+<h4 class="text-xl font-medium heading-font mb-4 text-gray-900">Education</h4>
+<div class="space-y-3">
+<div class="flex justify-between">
+<span class="font-medium text-gray-800">Uganda Advanced Certificate Of Education</span>
+<span class="text-gray-500">2020 - 2022</span>
+</div>
+<p class="text-gray-600"> Masaka Secondary School</p>
+<div class="flex justify-between mt-4">
+<span class="font-medium text-gray-800">Bachelor of Science in Information Technology</span>
+<span class="text-gray-500">2023 - 2026</span>
+</div>
+<p class="text-gray-600"> Mbarara University Of Science And Technology</p>
+</div>
+</div>
+<div class="mb-8">
+<h4 class="text-xl font-medium heading-font mb-4 text-gray-900">Experience</h4>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between">
+<span class="font-medium text-gray-800">Senior I.T Officer</span>
+<span class="text-gray-500">2023 - Present</span>
+</div>
+<p class="text-gray-600 mb-2">SbnTechVision Inc.</p>
+<p class="text-gray-700">Leading frontend and back end development for enterprise SaaS applications, managing a team of developers, and implementing modern architecture.</p>
+</div>
+<div>
+<div class="flex justify-between">
+<span class="font-medium text-gray-800">Frontend and backend Developer</span>
+<span class="text-gray-500">2023 - 2025</span>
+</div>
+<p class="text-gray-600 mb-2">InnovateTech Solutions</p>
+<p class="text-gray-700">Developed responsive web and mobile applications using React, implemented state management solutions, and optimized application performance.</p>
+</div>
+</div>
+</div>
+<a href="https://drive.google.com/file/d/1P7TMW-ZTLMqtrcwFMyeYiLiqNBDr1Kbl/view?usp=drive_link" target="_blank" class="inline-flex items-center bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+<i class="ri-download-line ri-lg mr-2"></i>
+Download Resume
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section id="skills" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl md:text-4xl font-bold heading-font text-center mb-16 text-gray-900">Skills & Technologies</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white p-8 rounded-lg shadow-md">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-lg mb-6">
+<i class="ri-code-line ri-xl"></i>
+</div>
+<h3 class="text-xl font-semibold heading-font mb-6 text-gray-900">Frontend Development</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">HTML/CSS</span>
+<span class="text-gray-500">95%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress bg-primary" style="width: 95%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">JavaScript</span>
+<span class="text-gray-500">90%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress bg-primary" style="width: 90%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">React</span>
+<span class="text-gray-500">92%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress bg-primary" style="width: 92%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">Vue.js</span>
+<span class="text-gray-500">85%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress bg-primary" style="width: 85%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">TypeScript</span>
+<span class="text-gray-500">88%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress bg-primary" style="width: 88%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-md">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary/10 text-secondary rounded-lg mb-6">
+<i class="ri-server-line ri-xl"></i>
+</div>
+<h3 class="text-xl font-semibold heading-font mb-6 text-gray-900">Backend & Tools</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">Node.js</span>
+<span class="text-gray-500">80%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress bg-secondary" style="width: 80%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">Express</span>
+<span class="text-gray-500">78%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress bg-secondary" style="width: 78%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">MongoDB</span>
+<span class="text-gray-500">75%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress bg-secondary" style="width: 75%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">Git/GitHub</span>
+<span class="text-gray-500">90%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress bg-secondary" style="width: 90%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">Docker</span>
+<span class="text-gray-500">80%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress bg-secondary" style="width: 80%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-md">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-lg mb-6">
+<i class="ri-palette-line ri-xl"></i>
+</div>
+<h3 class="text-xl font-semibold heading-font mb-6 text-gray-900">Design & Other</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">UI/UX Design</span>
+<span class="text-gray-500">85%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress bg-primary" style="width: 85%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">Figma and Canva</span>
+<span class="text-gray-500">82%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress bg-primary" style="width: 82%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">Responsive Design</span>
+<span class="text-gray-500">95%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress bg-primary" style="width: 95%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">Performance Optimization</span>
+<span class="text-gray-500">88%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress bg-primary" style="width: 88%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">Accessibility (WCAG)</span>
+<span class="text-gray-500">90%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress bg-primary" style="width: 90%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16">
+<h3 class="text-2xl font-semibold heading-font text-center mb-10 text-gray-900">Technologies I Work With</h3>
+<div class="flex flex-wrap justify-center gap-8 md:gap-12">
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center text-gray-700">
+<i class="ri-html5-line ri-3x"></i>
+</div>
+<span class="mt-2 text-gray-700">HTML5</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center text-gray-700">
+<i class="ri-css3-line ri-3x"></i>
+</div>
+<span class="mt-2 text-gray-700">CSS3</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center text-gray-700">
+<i class="ri-javascript-line ri-3x"></i>
+</div>
+<span class="mt-2 text-gray-700">JavaScript</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center text-gray-700">
+<i class="ri-reactjs-line ri-3x"></i>
+</div>
+<span class="mt-2 text-gray-700">React</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center text-gray-700">
+<i class="ri-vuejs-line ri-3x"></i>
+</div>
+<span class="mt-2 text-gray-700">Vue.js</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center text-gray-700">
+<i class="ri-nodejs-line ri-3x"></i>
+</div>
+<span class="mt-2 text-gray-700">Node.js</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center text-gray-700">
+<i class="ri-github-line ri-3x"></i>
+</div>
+<span class="mt-2 text-gray-700">GitHub</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 flex items-center justify-center text-gray-700">
+<i class="ri-database-2-line ri-3x"></i>
+</div>
+<span class="mt-2 text-gray-700">MongoDB</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section id="projects" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl md:text-4xl font-bold heading-font text-center mb-6 text-gray-900">My Projects</h2>
+<p class="text-gray-700 text-center max-w-2xl mx-auto mb-12">Explore my recent work and projects that showcase my skills and expertise in frontend development.</p>
+<div class="flex flex-wrap justify-center gap-4 mb-12">
+<button class="filter-btn active px-5 py-2 !rounded-button border border-gray-300 text-gray-700 hover:bg-gray-100 transition-colors whitespace-nowrap" data-filter="all">All Projects</button>
+<button class="filter-btn px-5 py-2 !rounded-button border border-gray-300 text-gray-700 hover:bg-gray-100 transition-colors whitespace-nowrap" data-filter="web">Web Apps</button>
+<button class="filter-btn px-5 py-2 !rounded-button border border-gray-300 text-gray-700 hover:bg-gray-100 transition-colors whitespace-nowrap" data-filter="mobile">Mobile</button>
+<button class="filter-btn px-5 py-2 !rounded-button border border-gray-300 text-gray-700 hover:bg-gray-100 transition-colors whitespace-nowrap" data-filter="ui">UI/UX</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="project-card bg-white rounded-lg overflow-hidden shadow-md" data-category="web">
+<div class="h-56 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%20e-commerce%20dashboard%20interface%2C%20clean%20UI%20design%2C%20data%20visualization%2C%20admin%20panel%2C%20professional%20web%20application%20screenshot%2C%20high%20quality%2C%20detailed%2C%208k%20resolution&width=600&height=400&seq=project1&orientation=landscape" alt="E-commerce Dashboard" class="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold heading-font mb-2 text-gray-900">E-commerce Dashboard</h3>
+<p class="text-gray-700 mb-4">A comprehensive admin dashboard for e-commerce businesses with real-time analytics, inventory management, and order processing.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">React</span>
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Redux</span>
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Chart.js</span>
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Tailwind CSS</span>
+</div>
+<a href="/project-1.html" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
+View Project
+<i class="ri-arrow-right-line ri-lg ml-1"></i>
+</a>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="project-card bg-white rounded-lg overflow-hidden shadow-md" data-category="mobile">
+<div class="h-56 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=fitness%20mobile%20app%20interface%2C%20workout%20tracking%2C%20clean%20modern%20UI%20design%2C%20mobile%20application%20screenshot%20on%20smartphone%2C%20professional%20mobile%20app%20design%2C%20high%20quality%2C%20detailed%2C%208k%20resolution&width=600&height=400&seq=project2&orientation=landscape" alt="Fitness Tracker App" class="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold heading-font mb-2 text-gray-900">Fitness Tracker App</h3>
+<p class="text-gray-700 mb-4">A mobile application for tracking workouts, setting fitness goals, and monitoring progress with personalized recommendations.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">React Native</span>
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Firebase</span>
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Redux</span>
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Expo</span>
+</div>
+<a href="https://readdy.ai/home/d066e740-5faf-4635-8b9d-5c2075a3ef74/735d7486-cce5-4c37-96c8-8bd69c78179e" data-readdy="true" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
+View Project
+<i class="ri-arrow-right-line ri-lg ml-1"></i>
+</a>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="project-card bg-white rounded-lg overflow-hidden shadow-md" data-category="ui">
+<div class="h-56 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%20banking%20website%20design%2C%20financial%20services%20interface%2C%20clean%20UI%20design%2C%20professional%20website%20screenshot%2C%20banking%20application%2C%20high%20quality%2C%20detailed%2C%208k%20resolution&width=600&height=400&seq=project3&orientation=landscape" alt="Banking Website Redesign" class="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold heading-font mb-2 text-gray-900">Banking Website Redesign</h3>
+<p class="text-gray-700 mb-4">A complete redesign of a banking website focusing on improved user experience, accessibility, and modern visual design.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Figma</span>
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">HTML/CSS</span>
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">JavaScript</span>
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">GSAP</span>
+</div>
+<a href="https://readdy.ai/home/d066e740-5faf-4635-8b9d-5c2075a3ef74/735d7486-cce5-4c37-96c8-8bd69c78179e" data-readdy="true" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
+View Project
+<i class="ri-arrow-right-line ri-lg ml-1"></i>
+</a>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="project-card bg-white rounded-lg overflow-hidden shadow-md" data-category="web">
+<div class="h-56 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=task%20management%20web%20application%2C%20project%20management%20tool%2C%20kanban%20board%20interface%2C%20clean%20modern%20UI%20design%2C%20professional%20web%20application%20screenshot%2C%20high%20quality%2C%20detailed%2C%208k%20resolution&width=600&height=400&seq=project4&orientation=landscape" alt="Task Management Platform" class="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold heading-font mb-2 text-gray-900">Task Management Platform</h3>
+<p class="text-gray-700 mb-4">A collaborative task management platform with kanban boards, team collaboration features, and project analytics.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Vue.js</span>
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Vuex</span>
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Node.js</span>
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">MongoDB</span>
+</div>
+<a href="https://readdy.ai/home/d066e740-5faf-4635-8b9d-5c2075a3ef74/735d7486-cce5-4c37-96c8-8bd69c78179e" data-readdy="true" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
+View Project
+<i class="ri-arrow-right-line ri-lg ml-1"></i>
+</a>
+</div>
+</div>
+<!-- Project 5 -->
+<div class="project-card bg-white rounded-lg overflow-hidden shadow-md" data-category="mobile">
+<div class="h-56 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=food%20delivery%20mobile%20app%20interface%2C%20restaurant%20browsing%2C%20food%20ordering%2C%20clean%20modern%20UI%20design%2C%20mobile%20application%20screenshot%20on%20smartphone%2C%20professional%20mobile%20app%20design%2C%20high%20quality%2C%20detailed%2C%208k%20resolution&width=600&height=400&seq=project5&orientation=landscape" alt="Food Delivery App" class="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold heading-font mb-2 text-gray-900">Food Delivery App</h3>
+<p class="text-gray-700 mb-4">A mobile app for food delivery services with restaurant browsing, order tracking, and payment processing features.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Flutter</span>
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Firebase</span>
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Google Maps API</span>
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Stripe</span>
+</div>
+<a href="https://readdy.ai/home/d066e740-5faf-4635-8b9d-5c2075a3ef74/735d7486-cce5-4c37-96c8-8bd69c78179e" data-readdy="true" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
+View Project
+<i class="ri-arrow-right-line ri-lg ml-1"></i>
+</a>
+</div>
+</div>
+<!-- Project 6 -->
+<div class="project-card bg-white rounded-lg overflow-hidden shadow-md" data-category="ui">
+<div class="h-56 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=travel%20booking%20website%20design%2C%20vacation%20planning%20interface%2C%20clean%20modern%20UI%20design%2C%20professional%20website%20screenshot%2C%20travel%20application%2C%20high%20quality%2C%20detailed%2C%208k%20resolution&width=600&height=400&seq=project6&orientation=landscape" alt="Travel Booking Website" class="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold heading-font mb-2 text-gray-900">Travel Booking Website</h3>
+<p class="text-gray-700 mb-4">A comprehensive travel booking platform with flight and hotel reservations, trip planning tools, and personalized recommendations.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">React</span>
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Next.js</span>
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Tailwind CSS</span>
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Framer Motion</span>
+</div>
+<a href="https://readdy.ai/home/d066e740-5faf-4635-8b9d-5c2075a3ef74/735d7486-cce5-4c37-96c8-8bd69c78179e" data-readdy="true" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
+View Project
+<i class="ri-arrow-right-line ri-lg ml-1"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<a href="https://www.github.com/" class="inline-flex items-center bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+View All Projects
+<i class="ri-arrow-right-line ri-lg ml-2"></i>
+</a>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl md:text-4xl font-bold heading-font text-center mb-6 text-gray-900">Get In Touch</h2>
+<p class="text-gray-700 text-center max-w-2xl mx-auto mb-12">Have a project in mind or want to discuss potential opportunities? Feel free to reach out!</p>
+<div class="flex flex-col md:flex-row gap-12">
+<div class="w-full md:w-1/2 bg-white p-8 rounded-lg shadow-md">
+<h3 class="text-2xl font-semibold heading-font mb-6 text-gray-900">Send Me a Message</h3>
+<form id="contactForm">
+<div class="mb-6">
+<label for="name" class="block text-gray-700 mb-2">Name</label>
+<input type="text" id="name" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-primary focus:outline-none" placeholder="Your name">
+</div>
+<div class="mb-6">
+<label for="email" class="block text-gray-700 mb-2">Email</label>
+<input type="email" id="email" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-primary focus:outline-none" placeholder="Your email address">
+</div>
+<div class="mb-6">
+<label for="subject" class="block text-gray-700 mb-2">Subject</label>
+<input type="text" id="subject" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-primary focus:outline-none" placeholder="Subject of your message">
+</div>
+<div class="mb-6">
+<label for="message" class="block text-gray-700 mb-2">Message</label>
+<textarea id="message" rows="5" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-primary focus:outline-none resize-none" placeholder="Your message"></textarea>
+</div>
+<div class="mb-6">
+<label class="custom-checkbox">
+<input type="checkbox" id="agreement">
+<span class="checkmark mr-2"></span>
+<span class="text-gray-700">I agree to the privacy policy and terms of service</span>
+</label>
+</div>
+<button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+Send Message
+</button>
+</form>
+</div>
+<div class="w-full md:w-1/2">
+<div class="bg-white p-8 rounded-lg shadow-md mb-8">
+<h3 class="text-2xl font-semibold heading-font mb-6 text-gray-900">Contact Information</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-4">
+<i class="ri-mail-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-1">Email</h4>
+<a href="mailto:ssebwana.rogers3@gmail.com" class="text-gray-700 hover:text-primary">sbnrogers95@gmail.com</a>
+<a href="mailto:ssebwana.rogers3@gmail.com" class="text-gray-700 hover:text-primary">2023bit212@std.must.ac.ug</a>
+<a href="mailto:ssebwana.rogers3@gmail.com" class="text-gray-700 hover:text-primary">ssebwana.rogers3@gmail.com</a>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-4">
+<i class="ri-phone-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-1">Phone</h4>
+<a href="tel:+256 743722223" class="text-gray-700 hover:text-primary">+256 74372223</a>
+<a href="tel:+256 743722223" class="text-gray-700 hover:text-primary">+256 774551585</a>
+<a href="tel:+256 743722223" class="text-gray-700 hover:text-primary">+256 759486069</a>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-4">
+<i class="ri-map-pin-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-1">Location</h4>
+<p class="text-gray-700">Kijjabwemi, Masaka, UGANDA</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-md">
+<h3 class="text-2xl font-semibold heading-font mb-6 text-gray-900">Connect With Me</h3>
+<div class="flex space-x-4">
+<a href="https://www.github.com/" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white text-gray-700 rounded-full transition-colors">
+<i class="ri-github-line ri-lg"></i>
+</a>
+<a href="https://www.linkedin.com/" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white text-gray-700 rounded-full transition-colors">
+<i class="ri-linkedin-line ri-lg"></i>
+</a>
+<a href="https://www.twitter.com/" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white text-gray-700 rounded-full transition-colors">
+<i class="ri-twitter-x-line ri-lg"></i>
+</a>
+<a href=" https://www.dribbble.com/" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white text-gray-700 rounded-full transition-colors">
+<i class="ri-dribbble-line ri-lg"></i>
+</a>
+<a href="https://www.behance.com/" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white text-gray-700 rounded-full transition-colors">
+<i class="ri-behance-line ri-lg"></i>
+</a>
+<a href="https://www.tiktok.com/" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white text-gray-700 rounded-full transition-colors">
+<i class="ri-tiktok-line ri-lg"></i>
+</a>
+</div>
+<div class="mt-8">
+<h4 class="font-medium text-gray-900 mb-4">Available for Freelance Work</h4>
+<p class="text-blue-700 mb-4">I'm always available for freelance projects and open to new opportunities. Let's create something amazing together!</p>
+<div class="flex items-center">
+<div class="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
+<span class="text-gray-700">Available for new projects</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row justify-between items-center mb-8">
+<a href="#" class="text-2xl font-['Pacifico'] text-white mb-4 md:mb-0">SIR SSEBWANA ROGERS</a>
+<div class="flex space-x-6">
+<a href="https://www.github.com/"  target="_blank" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-github-fill ri-lg"></i>
+</a>
+<a href="https://www.linkedin.com/"  target="_blank" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-linkedin-fill ri-lg"></i>
+</a>
+<a href="https://www.twitter.com/"  target="_blank" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-twitter-x-fill ri-lg"></i>
+</a>
+<a href="https://www.dribbble.com/"  target="_blank" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-dribbble-fill ri-lg"></i>
+</a>
+<a href="https://www.behance.com/"  target="_blank" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-behance-fill ri-lg"></i>
+</a>
+<a href="https://www.tiktok.com/"  target="_blank" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-tiktok-fill ri-lg"></i>
+</a>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-gray-400">&copy; 2026 SSEBWANA ROGERS. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a>
+<a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a>
+<a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a>
+<a href="#skills" class="text-gray-400 hover:text-white transition-colors">Skills</a>
+<a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed bottom-6 right-6">
+<a href="#home" class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full shadow-lg hover:bg-primary/90 transition-colors">
+<i class="ri-arrow-up-line ri-lg"></i>
+</a>
+</div>
+</footer>
+<script id="mobileMenuScript">
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+mobileMenuBtn.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+if (mobileMenu.classList.contains('hidden')) {
+mobileMenuBtn.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+} else {
+mobileMenuBtn.innerHTML = '<i class="ri-close-line ri-lg"></i>';
+}
+});
+// Close mobile menu when clicking on a link
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach(link => {
+link.addEventListener('click', function() {
+mobileMenu.classList.add('hidden');
+mobileMenuBtn.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+});
+});
+});
+</script>
+<script id="themeToggleScript">
+document.addEventListener('DOMContentLoaded', function() {
+const themeToggle = document.getElementById('themeToggle');
+const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+const html = document.documentElement;
+// Check for saved theme preference or use default
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+html.classList.add('dark');
+themeToggle.checked = true;
+mobileThemeToggle.checked = true;
+}
+// Toggle theme function
+function toggleTheme() {
+if (html.classList.contains('dark')) {
+html.classList.remove('dark');
+localStorage.setItem('theme', 'light');
+themeToggle.checked = false;
+mobileThemeToggle.checked = false;
+} else {
+html.classList.add('dark');
+localStorage.setItem('theme', 'dark');
+themeToggle.checked = true;
+mobileThemeToggle.checked = true;
+}
+}
+// Event listeners for theme toggles
+themeToggle.addEventListener('change', toggleTheme);
+mobileThemeToggle.addEventListener('change', toggleTheme);
+});
+</script>
+<script id="smoothScrollScript">
+document.addEventListener('DOMContentLoaded', function() {
+const links = document.querySelectorAll('a[href^="#"]');
+links.forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80, // Adjust for header height
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+<script id="projectFilterScript">
+document.addEventListener('DOMContentLoaded', function() {
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+filterBtns.forEach(btn => {
+btn.addEventListener('click', function() {
+// Update active button
+filterBtns.forEach(b => b.classList.remove('active'));
+this.classList.add('active');
+const filter = this.getAttribute('data-filter');
+// Filter projects
+projectCards.forEach(card => {
+if (filter === 'all' || card.getAttribute('data-category') === filter) {
+card.style.display = 'block';
+} else {
+card.style.display = 'none';
+}
+});
+});
+});
+});
+</script>
+<script id="contactFormScript">
+document.addEventListener('DOMContentLoaded', function() {
+const contactForm = document.getElementById('contactForm');
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+// Sbn Get form values
+const name = document.getElementById('name').value;
+const email = document.getElementById('email').value;
+const subject = document.getElementById('subject').value;
+const message = document.getElementById('message').value;
+const agreement = document.getElementById('agreement').checked;
+// Sbn Simple validation
+if (!name || !email || !subject || !message) {
+alert('Please fill in all fields');
+return;
+}
+if (!agreement) {
+alert('Please agree to the privacy policy and terms of service');
+return;
+}
+ 
+alert('Thank you for your message! I\'ll get back to you soon.');
+contactForm.reset();
+});
+});
+</script>
+</body>
+</html>
